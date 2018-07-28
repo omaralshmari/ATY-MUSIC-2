@@ -50,7 +50,7 @@ client.on('message', function(message) {
     const mess = message.content.toLowerCase();
     const args = message.content.split(' ').slice(1).join(' ');
 
-    if (mess.startsWith(prefix + 'play')) {
+    if (mess.startsWith(prefix + 'play2')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         // if user is not insert the URL or song title
         if (args.length == 0) {
@@ -134,17 +134,17 @@ client.on('message', function(message) {
             dispatcher.resume();
         });
     }
-    else if (mess.startsWith(prefix + 'stop')) {
+    else if (mess.startsWith(prefix + 'stop2')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         message.channel.send('`✔`');
         var server = server = servers[message.guild.id];
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
     }
-    else if (mess.startsWith(prefix + 'تعال')) {
+    else if (mess.startsWith(prefix + 'تعال2')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         message.member.voiceChannel.join().then(message.channel.send(':ok:'));
     }
-    else if (mess.startsWith(prefix + 'play')) {
+    else if (mess.startsWith(prefix + 'play2')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         if (isPlaying == false) return message.channel.send(':anger: || **__تم التوقيف__**');
         let playing_now_info = new Discord.RichEmbed()
