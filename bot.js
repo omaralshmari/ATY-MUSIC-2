@@ -245,8 +245,8 @@ function isYoutube(str) {
      خروج البوت من الروم
      prefix = ${prefix}
      ping = ${Date.now() - message.createdTimestamp}ms
-     for help = <Arhan Abdulhadi#0674>
-     By ATY   `)
+     for help = < @Arhan Abdulhadi#0674 >
+        `)
 
       message.channel.send({embed});
      }
