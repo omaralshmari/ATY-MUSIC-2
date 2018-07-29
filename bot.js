@@ -1,17 +1,14 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const ytdl = require('ytdl-core');
-const request = require('request');
-const fs = require('fs');
-const getYoutubeID = require('get-youtube-id');
-const fetchVideoInfo = require('youtube-info');
+ const prefix = "برفكسك";
+client.on('ready', () => {
+    console.log('I am ready!');
+});
 
-const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const prefix = 'بريفكس';
-const discord_token = "توكن";
-client.login(discord_token);
-client.on('ready', function() {
-    console.log(`i am ready ${client.user.username}`);
+client.on('message', message => {
+    if (message.content === 'zg') {
+        message.reply('pong');
+      }
 });
 /*
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -50,7 +47,7 @@ client.on('message', function(message) {
     const mess = message.content.toLowerCase();
     const args = message.content.split(' ').slice(1).join(' ');
 
-    if (mess.startsWith(prefix + 'play2')) {
+    if (mess.startsWith(prefix + 'play')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         // if user is not insert the URL or song title
         if (args.length == 0) {
@@ -134,17 +131,17 @@ client.on('message', function(message) {
             dispatcher.resume();
         });
     }
-    else if (mess.startsWith(prefix + 'stop2')) {
+    else if (mess.startsWith(prefix + 'stop')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         message.channel.send('`✔`');
         var server = server = servers[message.guild.id];
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
     }
-    else if (mess.startsWith(prefix + 'تعال2')) {
+    else if (mess.startsWith(prefix + 'تعال')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         message.member.voiceChannel.join().then(message.channel.send(':ok:'));
     }
-    else if (mess.startsWith(prefix + 'play2')) {
+    else if (mess.startsWith(prefix + 'play')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         if (isPlaying == false) return message.channel.send(':anger: || **__تم التوقيف__**');
         let playing_now_info = new Discord.RichEmbed()
