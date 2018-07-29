@@ -1,14 +1,14 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
- const prefix = "2";
+const ytdl = require('ytdl-core');
+const request = require('request');
+const fs = require('fs');
+const getYoutubeID = require('get-youtube-id');
+const fetchVideoInfo = require('youtube-info');
+const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
+const prefix = '2';
 client.on('ready', () => {
     console.log('I am ready!');
-});
-
-client.on('message', message => {
-    if (message.content === 'zg') {
-        message.reply('pong');
-      }
 });
 /*
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -225,28 +225,28 @@ function isYoutube(str) {
     return str.toLowerCase().indexOf('youtube.com') > -1;
 }
  client.on('message', message => {
-     if (message.content === prefix +"مساعfffffgfsvbadfgqegavzxfawfdafgsbaghhhhhhhhhhaerfgدة") {
+     if (message.content === prefix +"help") {
     const embed = new Discord.RichEmbed()
      .setColor("RANDOM")
      .addField(`**__أوامر البوت__**`,`
 .    **${prefix}تعال**
      عشان يدخل البوت الروم
-     **${prefix}شغل**
+     **${prefix}play**
      امر تشغيل الأغنية , !شغل الرابط او اسم الأعنية
-     **${prefix}تخطي**
+     **${prefix}skip**
      تغير الأغنية
-     **${prefix}وقف**
+     **${prefix}pause**
      ايقاف الأغنية
-     **${prefix}كمل**
+     **${prefix}remuse**
      مواصلة الأغنية
-     **${prefix}صوت**
+     **${prefix}vol**
      مستوى الصوت 1-100
-     **${prefix}اطلع**
+     **${prefix}stop**
      خروج البوت من الروم
      prefix = ${prefix}
      ping = ${Date.now() - message.createdTimestamp}ms
-     for help = <Marshall#7799>
-     By Marshall   `)
+     for help = <Arhan Abdulhadi#0674>
+     By ATY   `)
 
       message.channel.send({embed});
      }
