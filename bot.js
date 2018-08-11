@@ -25,7 +25,7 @@ client.on('ready', () => {
     client.user.setStatus("idle")
 });
 client.on('ready', () => {
-     client.user.setActivity("Type uplay",{type: 'WATCHING'});
+     client.user.setActivity("Type 2play",{type: 'WATCHING'});
 
 });
 const prefix = "2"
